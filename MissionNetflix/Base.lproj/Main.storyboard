@@ -245,7 +245,7 @@
         <!--고래밥 님-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="MissionNetflix" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -348,19 +348,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="고래밥 님" id="T1R-vF-RcM"/>
-                    <connections>
-                        <outlet property="bookmarkContentsButton" destination="lKG-Wp-Xxv" id="Ubm-NR-6q2"/>
-                        <outlet property="firstImageView" destination="lNt-pF-tlf" id="C2g-GO-p6F"/>
-                        <outlet property="mainImageView" destination="8ag-kn-xXq" id="F6R-Tb-Dla"/>
-                        <outlet property="netLogoImageView" destination="iBy-Dj-o3b" id="jUJ-Ri-W7p"/>
-                        <outlet property="newEpisodeLabel" destination="crc-0A-fq2" id="64w-Pi-LgM"/>
-                        <outlet property="newSeriesLabel" destination="oDe-MP-K5R" id="iFf-bF-sph"/>
-                        <outlet property="playButton" destination="m7e-Fa-PqT" id="tIq-3t-Kpz"/>
-                        <outlet property="secondImageView" destination="Zct-if-MAd" id="mMj-GM-hTY"/>
-                        <outlet property="thirdImageView" destination="4bK-Zo-Lkb" id="peK-Np-ga8"/>
-                        <outlet property="top10ImageView" destination="ftt-4F-3a3" id="hQi-qU-4Bz"/>
-                        <outlet property="top10Label" destination="iTV-BL-fC3" id="mla-ll-O7M"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
