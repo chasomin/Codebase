@@ -87,7 +87,7 @@ class NewHotViewController: UIViewController {
         subLabel.text = "다른 영화, 시리즈, 배우, 감독 또는 장르를 검색해 보세요."
         subLabel.font = .systemFont(ofSize: 15)
         subLabel.textAlignment = .center
-        subLabel.textColor  = .white
+        subLabel.textColor  = .systemGray2
 
         
     }

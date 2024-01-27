@@ -85,10 +85,10 @@ class HomeViewController: UIViewController {
         genreLabel.textColor = .white
         genreLabel.textAlignment = .center
         
-        playButton.configuration = .rectangleWhiteButton(title: "재생", image: "play.fill", backgroundColor: .white, foregroundColor: .black)
+        playButton.configuration = .rectangleButton(title: "재생", image: "play.fill", backgroundColor: .white, foregroundColor: .black)
         playButton.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)    //왜안돼
 
-        bookmarkContentsButton.configuration = .rectangleWhiteButton(title: "내가 찜한 리스트", image: "plus", backgroundColor: .darkGray, foregroundColor: .white)
+        bookmarkContentsButton.configuration = .rectangleButton(title: "내가 찜한 리스트", image: "plus", backgroundColor: .darkGray, foregroundColor: .white)
         
         
         newEpisodeLabel.text = "새로운 에피소드"
@@ -147,13 +147,15 @@ class HomeViewController: UIViewController {
         
         playButton.snp.makeConstraints { make in
             make.bottom.equalToSuperview().inset(20)
-            make.leading.equalToSuperview().inset(40)
+            make.leading.equalToSuperview().inset(10)
+            make.width.equalTo(bookmarkContentsButton)
     
         }
         
         bookmarkContentsButton.snp.makeConstraints { make in
             make.bottom.equalToSuperview().inset(20)
-            make.trailing.equalToSuperview().inset(40)
+            make.leading.equalTo(playButton.snp.trailing).offset(10)
+            make.trailing.equalToSuperview().inset(10)
 
         }
         
@@ -201,9 +203,6 @@ extension HomeViewController {
         imageView.clipsToBounds = true
     }
 
-    func designButton(_ button: UIButton) {
-        button.layer.cornerRadius = 5
-    }
     
     func randomImage(_ image: UIImageView) {
         image.image = UIImage(named: imageArr.randomElement()!)
@@ -219,17 +218,19 @@ extension HomeViewController {
 
 }
 
-#Preview {
-    HomeViewController()
-}
 
 extension UIButton.Configuration {
     
-    static func rectangleWhiteButton(title: String, image: String, backgroundColor: UIColor, foregroundColor: UIColor) -> UIButton.Configuration {
+    static func rectangleButton(title: String, image: String, backgroundColor: UIColor, foregroundColor: UIColor) -> UIButton.Configuration {
 
         var config = UIButton.Configuration.filled()
         config.title = title
         config.titleAlignment = .center
+        
+        var container = AttributeContainer()
+        container.font = UIFont.boldSystemFont(ofSize: 15)
+        config.attributedTitle = AttributedString(title, attributes: container)
+
         
         config.image = UIImage(systemName: image)
         config.imagePlacement = .leading
