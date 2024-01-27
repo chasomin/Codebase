@@ -17,6 +17,10 @@ class NewHotViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .black
+        
+        title = "NEW & HOT 검색"
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
 
     }
     

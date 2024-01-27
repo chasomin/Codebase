@@ -24,12 +24,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let firstVC = UINavigationController(rootViewController: HomeViewController())
         let secondVC = UINavigationController(rootViewController: NewHotViewController())
+        let thirdVC = UINavigationController(rootViewController: SaveContentsViewController())
 
         
-        firstVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"),selectedImage: UIImage(systemName: "house.fill"))
-        secondVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"),selectedImage: UIImage(systemName: "person.fill"))
+        firstVC.tabBarItem = UITabBarItem(title: "홈", image: UIImage(systemName: "house"),selectedImage: UIImage(systemName: "house.fill"))
+        secondVC.tabBarItem = UITabBarItem(title: "NEW&HOT", image: UIImage(systemName: "play.rectangle.on.rectangle"),selectedImage: UIImage(systemName: "play.rectangle.on.rectangle.fill"))
+        thirdVC.tabBarItem = UITabBarItem(title: "저장된 콘텐츠 목록", image: UIImage(systemName: "arrow.down.circle"), selectedImage: UIImage(systemName: "arrow.down.circle.fill"))
 
-        tabbar.viewControllers = [firstVC, secondVC]
+        tabbar.viewControllers = [firstVC, secondVC, thirdVC]
 
         window?.rootViewController = tabbar
 
