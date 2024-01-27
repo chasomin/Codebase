@@ -243,4 +243,27 @@ extension UIButton.Configuration {
         return config
     }
     
+    static func capsuleButton(title: String, image: String, backgroundColor: UIColor, foregroundColor: UIColor) -> UIButton.Configuration {
+        
+        var config = UIButton.Configuration.filled()
+        
+        var container = AttributeContainer()
+        container.font = UIFont.boldSystemFont(ofSize: 13)
+        config.attributedTitle = AttributedString(title, attributes: container)
+
+        config.attributedTitle?.font = .footnote
+
+        config.titleAlignment = .center
+        
+        config.image = UIImage(named: image)
+        config.imagePlacement = .leading
+        config.imagePadding = 5
+        
+        config.cornerStyle = .capsule
+        
+        config.baseBackgroundColor = backgroundColor
+        config.baseForegroundColor = foregroundColor
+        return config
+    }
+    
 }
